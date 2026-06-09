@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativo de Trânsito em Tempo Real - Recife</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="painel">
+            <h2>🚦 TRÁFEGO INTELIGENTE</h2>
+            <p class="subtitulo">Cruzamento: Agamenon Magalhães x Rui Barbosa</p>
+            
+            <hr>
+
+            <div class="controle-grupo">
+                <label for="slider-trafego">Nível de Tráfego Geral: <span id="val-trafego">Médio</span></label>
+                <input type="range" id="slider-trafego" min="1" max="3" value="2">
+                <small>Aumenta o fluxo de carros simultaneamente em ambos os cenários.</small>
+            </div>
+
+            <hr>
+
+            <div class="status-box box-tradicional">
+                <h4>⏱️ Sistema Tradicional (Fixo)</h4>
+                <p>🚗 Fila Agamenon: <span id="fila-p-fixa" class="badge badge-vermelha">0</span></p>
+                <p>🚙 Fila Rui Barbosa: <span id="fila-s-fixa" class="badge badge-vermelha">0</span></p>
+                <p>⏱️ Tempo Verde: <strong>5s (Fixo)</strong></p>
+                <p>⚠️ Status: <span id="status-fixa" class="status-ok">Fluido</span></p>
+            </div>
+
+            <div class="status-box box-inteligente">
+                <h4>🤖 Sistema Inteligente (Adaptativo)</h4>
+                <p>🚗 Fila Agamenon: <span id="fila-p-ia" class="badge badge-verde">0</span></p>
+                <p>🚙 Fila Rui Barbosa: <span id="fila-s-ia" class="badge badge-verde">0</span></p>
+                <p>⏱️ Tempo Verde Atual: <strong id="val-tempo-verde">5s</strong></p>
+                <p>⚠️ Status: <span id="status-ia" class="status-ok">Fluido</span></p>
+            </div>
+        </div>
+
+        <div class="container-arenas">
+            
+            <div class="label-arena">MUNDO 1: SEMÁFORO TRADICIONAL (TEMPO FIXO)</div>
+            <div class="arena-simulacao" id="arena-fixa">
+                <div class="via via-principal"><div class="nome-via">Av. Agamenon Magalhães</div></div>
+                <div class="via via-secundaria"><div class="nome-via">Av. Rui Barbosa</div></div>
+                <div id="semaforo-p-fixa" class="semaforo vermelho semaforo-p"></div>
+                <div id="semaforo-s-fixa" class="semaforo verde semaforo-s"></div>
+            </div>
+
+            <div class="label-arena">MUNDO 2: SEMÁFORO INTELIGENTE (ADAPTATIVO COM IA)</div>
+            <div class="arena-simulacao" id="arena-inteligente">
+                <div class="via via-principal"><div class="nome-via">Av. Agamenon Magalhães</div></div>
+                <div class="via via-secundaria"><div class="nome-via">Av. Rui Barbosa</div></div>
+                <div id="semaforo-p-ia" class="semaforo vermelho semaforo-p"></div>
+                <div id="semaforo-s-ia" class="semaforo verde semaforo-s"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
